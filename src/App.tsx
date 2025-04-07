@@ -1,7 +1,7 @@
 import './App.css'
 
 function App() {
-  return <div>Hello</div>
+  return <div>Stormie DashBoard</div>
 }
 
 export default App
