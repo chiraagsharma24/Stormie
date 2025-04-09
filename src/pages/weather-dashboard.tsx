@@ -35,6 +35,8 @@ import {
         locationQuery.refetch();
       }
     };
+
+    console.log(coordinates) ;
   
     if (locationLoading) {
       return <WeatherSkeleton />;
