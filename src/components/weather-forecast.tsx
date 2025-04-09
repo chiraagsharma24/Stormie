@@ -52,17 +52,18 @@ export function WeatherForecast({ data }: WeatherForecastProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>5-Day Forecast</CardTitle>
+        <CardTitle className="text-lg sm:text-xl">5-Day Forecast</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">
           {nextDays.map((day) => (
             <div
               key={day.date}
-              className="grid grid-cols-3 items-center gap-4 rounded-lg border p-4"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 items-center gap-4 sm:gap-6 rounded-lg border p-3 sm:p-4"
             >
+              {/* Date & Description */}
               <div>
-                <p className="font-medium">
+                <p className="font-medium text-base sm:text-lg">
                   {format(new Date(day.date * 1000), "EEE, MMM d")}
                 </p>
                 <p className="text-sm text-muted-foreground capitalize">
@@ -70,7 +71,8 @@ export function WeatherForecast({ data }: WeatherForecastProps) {
                 </p>
               </div>
 
-              <div className="flex justify-center gap-4">
+              {/* Temperature */}
+              <div className="flex justify-start sm:justify-center gap-4 text-sm sm:text-base">
                 <span className="flex items-center text-blue-500">
                   <ArrowDown className="mr-1 h-4 w-4" />
                   {formatTemp(day.temp_min)}
@@ -81,14 +83,15 @@ export function WeatherForecast({ data }: WeatherForecastProps) {
                 </span>
               </div>
 
-              <div className="flex justify-end gap-4">
+              {/* Humidity & Wind */}
+              <div className="flex justify-start sm:justify-end gap-4 text-sm sm:text-base">
                 <span className="flex items-center gap-1">
                   <Droplets className="h-4 w-4 text-blue-500" />
-                  <span className="text-sm">{day.humidity}%</span>
+                  <span>{day.humidity}%</span>
                 </span>
                 <span className="flex items-center gap-1">
                   <Wind className="h-4 w-4 text-blue-500" />
-                  <span className="text-sm">{day.wind}m/s</span>
+                  <span>{day.wind}m/s</span>
                 </span>
               </div>
             </div>
