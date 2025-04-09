@@ -34,7 +34,7 @@
 - 🧪 Shadcn UI
 - 🌤️ OpenWeather API
 
----
+----
 
 ## 📦 Installation
 
